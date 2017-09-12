@@ -5,7 +5,6 @@ angular.module('video-player')
   },
   controller: function() {
     this.onSubmit = () => {
-      console.log(this.keyword);
       this.search(this.keyword);
     }
   },

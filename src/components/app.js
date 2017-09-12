@@ -11,9 +11,10 @@ angular.module('video-player')
       this.videos = data;
       this.video = data[0];
     }
-    this.search = (keyword = 'cats') => {
-      youTube.getVideos(keyword, this.fetchData);      
-    }
+    this.search = _.throttle((keyword = 'cats') => {
+      youTube.getVideos(keyword, this.fetchData);
+    }, 1000);
+
     this.search();
   },
   templateUrl: "src/templates/app.html"
