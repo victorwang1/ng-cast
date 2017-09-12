@@ -1,11 +1,11 @@
 angular.module('video-player')
 .component('search', {
   bindings: {
-    search: '<'
+    searchResults: '<'
   },
   controller: function() {
     this.onSubmit = () => {
-      this.search(this.keyword);
+      this.searchResults(this.keyword);
     }
   },
   templateUrl: "src/templates/search.html"

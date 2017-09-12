@@ -2,20 +2,20 @@ angular.module('video-player')
 .component('app', {
   controller: function(youTube) {
     this.videos = window.exampleVideoData;
-    this.video = this.videos[0];
+    this.currentVideo = this.videos[0];
 
-    this.setPlayerVideo = (video) => {
-      this.video = video;
+    this.selectVideo = (video) => {
+      this.currentVideo = video;
     }
     this.fetchData = (data) => {
       this.videos = data;
-      this.video = data[0];
+      this.currentVideo = data[0];
     }
-    this.search = _.throttle((keyword = 'cats') => {
-      youTube.getVideos(keyword, this.fetchData);
+    this.searchResults = _.throttle((keyword = 'hey') => {
+      youTube.search(keyword, this.fetchData);
     }, 1000);
 
-    this.search();
+    this.searchResults();
   },
   templateUrl: "src/templates/app.html"
 });

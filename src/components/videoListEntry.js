@@ -2,11 +2,11 @@ angular.module('video-player')
 .component('videoListEntry', {
   bindings: {
     video: '<',
-    setPlayerVideo: '<'
+    selectVideo: '<'
   },
   controller: function() {
     this.handleClick = () => {
-      this.setPlayerVideo(this.video);
+      this.selectVideo(this.video);
     };
   },
 
