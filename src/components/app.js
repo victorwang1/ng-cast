@@ -11,7 +11,10 @@ angular.module('video-player')
       this.videos = data;
       this.video = data[0];
     }
-    youTube.getVideos('cats', this.fetchData);
+    this.search = (keyword = 'cats') => {
+      youTube.getVideos(keyword, this.fetchData);      
+    }
+    this.search();
   },
   templateUrl: "src/templates/app.html"
 });

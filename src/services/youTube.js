@@ -1,10 +1,10 @@
 angular.module('video-player')
 .service('youTube', function($http){
-  this.getVideos = function(q = "dogs", callback) {
+  this.getVideos = function(q, callback) {
     $http({
     method: 'GET',
     params: {
-      q: 'dogs',
+      q: q,
       part: 'snippet',
       key: YOUTUBE_API_KEY,
       maxResults: '5',
