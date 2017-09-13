@@ -4,7 +4,7 @@
   </div>
   <div class="media-body">
     <div class="video-list-entry-title" ng-click="$ctrl.handleClick()">{{$ctrl.video.snippet.title}}</div>
-    <div>{{($ctrl.video.views).toLocaleString()}} Views</div>
+    <div>{{($ctrl.video.views) | number:0}} Views</div>
     <div class="video-list-entry-detail">{{$ctrl.video.snippet.description}}</div>
   </div>
 </li>
